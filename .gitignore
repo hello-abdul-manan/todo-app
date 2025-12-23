@@ -1,0 +1,47 @@
+# Python / Django
+__pycache__
+*.pyc
+*.pyd
+*.pyo
+.Python
+venv
+.venv
+env
+.env
+# specific to windows os
+pip-log.txt
+pip-delete-this-arg.txt
+
+# Databases
+# SQLite database file:
+*.sqlite3
+*.db-journal
+
+# Django static files and media (optional, see notes below)
+# staticfiles
+# media
+
+# Node.js / Tailwind CSS
+node_modules
+# If you are generating a specific output CSS file that you don't commit:
+# e.g., static/css/output.css or theme/static/css/dist/
+static/css/output.css
+theme/static/css/dist/
+npm-debug.log
+yarn-error.log
+
+# IDE and OS files
+# VS Code
+.vscode/
+# macOS
+.DS_Store
+# Eclipse
+.project
+.pydevproject
+
+# Testing and coverage
+.coverage
+.pytest_cache
+htmlcov/
+.tox/
+
