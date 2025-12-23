@@ -45,3 +45,5 @@ yarn-error.log
 htmlcov/
 .tox/
 
+"todo_web_app/db.sqlite3" 
+"todo_web_app/todo_web_app/__pycache__/" 
