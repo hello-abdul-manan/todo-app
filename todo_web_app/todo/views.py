@@ -5,6 +5,12 @@ from django.contrib.auth.decorators import login_required
 from .models import Todo
 from .forms import TodoForm
 
+# Landing page
+def landing_page(request):
+    if request.user.is_authenticated:
+        return redirect('todo_list')
+    return render(request, 'landing.html')
+
 # List all todos for logged-in user
 @login_required
 def todo_list(request):
@@ -72,6 +78,7 @@ def login_view(request):
     return render(request, 'registration/login.html', {'form': form})
 
 # Logout
+@login_required
 def logout_view(request):
     logout(request)
     return redirect('login')
