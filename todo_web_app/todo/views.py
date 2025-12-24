@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Todo
 from .forms import TodoForm
 
@@ -18,3 +18,15 @@ def todo_create(request):
     else:
         form = TodoForm()
     return render(request, 'todo/todo_form.html', {'form': form, 'title': 'Create Todo'})
+
+def todo_update(request, todo_id):
+    todo = get_object_or_404(Todo, pk=todo_id, user=request.user)
+    if request.method == 'POST':
+        form = TodoForm(request.POST, instance=todo)
+        if form.is_valid():
+            form.save()
+            return redirect('todo_list')
+    else:
+        form = TodoForm(instance=todo)
+    return render(request, 'todo/todo_form.html', {'form': form, 'title': 'Update Todo'})
+    
