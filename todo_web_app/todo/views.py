@@ -17,4 +17,4 @@ def todo_create(request):
             return redirect('todo_list')
     else:
         form = TodoForm()
-    return render(request, 'todo/todo_create.html', {'form': form, 'title': 'Create Todo'})
+    return render(request, 'todo/todo_form.html', {'form': form, 'title': 'Create Todo'})
